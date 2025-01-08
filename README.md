@@ -14,3 +14,9 @@ Non-text elements, such as icons, buttons, and graphical components, must have a
 This project inputs the hex codes for the background and foreground colors and checks for the three criteria listed above. The goal is to improve digital accessibility!
 
 Furthermore, an AI-powered model (Qwen/QwQ-32B-Preview) sourced from HuggingFace gives foreground color recommendations to improve readability and pass the WCAG criteria.
+
+## Demo
+
+
+https://github.com/user-attachments/assets/6c6b3d5b-9683-466d-9086-857b7d6fede5
+
