@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>AI-Powered WCAG Contrast Checker</title>
+</head>
+<body>
+    <h1>AI-Powered WCAG Contrast Checker</h1>
+    <div class="input-groups">
+        <form action="/submit" method="POST">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Foreground Hex Code</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="foreground" name="foreground" required>
+            </div>
+        
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Background Hex Code</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="background" name="background" required>
+            </div>
+        </div>
+        <div class="buttons">
+            <button type="submit" class="btn btn-primary" id="check-compliance">Check Compliance</button>
+            <div class="spinner-border" role="status" id="loader">
+                <span class="visually-hidden"></span>
+            </div>
+        </div>
+        <div class="text">
+            Powered by Qwen/QwQ-32B-Preview
+        </div>
+        <script src="{{ url_for('static',filename='script.js') }}"></script>
+    </form>
+</body>
+</html>

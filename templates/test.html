@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Results</h1>
+    <form action="/submission" method="POST">
+        {% if new_results %}
+        <ul>
+            <li>Normal Text Compliant: {{ new_results.is_normal_text_compliant }}</li>
+            <li>Large Text Compliant: {{ new_results.is_large_text_compliant }}</li>
+            <li>UI Components Compliant: {{ new_results.is_ui_components_compliant }}</li>
+        </ul>
+        
+        {{ new_results.response }}
+     
+        {% endif %}
+    </form>
+</body>
+</html>

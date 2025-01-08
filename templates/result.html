@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>WCAG AA Level Results</title>
+</head>
+<body>
+    <h1>WCAG AA Level Results</h1>
+    <form action="/submission" method="POST">
+        {% if results %}
+        <ul>
+            <li>Normal Text Compliant: <strong>{{ results.is_normal_text_compliant }} </strong></li>
+            <li>Large Text Compliant: <strong>{{ results.is_large_text_compliant }}</strong></li>
+            <li>UI Components Compliant: <strong>{{ results.is_ui_components_compliant }}</strong></li>
+        </ul>
+        <div class="llm-response-box">
+            <h3>AI Suggestions for other Foreground Colors</h3>
+            <div class="llm-response">
+                {{ results.llm_response }}
+              </div>
+        </div>
+        
+        {% endif %}
+    </form>
+</body>
+</html>
